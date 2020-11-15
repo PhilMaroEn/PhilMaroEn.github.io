@@ -22,3 +22,37 @@
      For our project, we chose to...
      </body>
 </html>
+
+  
+  
+<h1 class="title toc-ignore">SDS 2019 - M3: Group Assignment</h1>
+<h4 class="author">Andreas, Simon, Jess, Lars</h4>
+<h4 class="date">14/9/2019</h4>
+
+</div>
+
+
+<div id="house-prices-king-county" class="section level1">
+<div name="house_prices_king_county" data-unique="house_prices_king_county"></div><h1>House prices King County</h1>
+<p>In this project we have choosen to work with a regression problem, where we would work around the following problem statement. To solve the ploblem statement we’ll use the statistic-, ML- and deep learning-techniques we have learned so far in our study.</p>
+<p>Problem statement: Predict sale prices of the housesales in King County.</p>
+<p>Further we want to evaluate which of our models has the highest accuracy.</p>
+<p>In this project we’re working with a dataset which contains the house prices for King County, Seattle, USA. It includes houses sold between May 2014 and May 2015. The dataset consist of 21.613 observations of 21 variables.</p>
+<div class="row"><div class="col-md-12"><button type="button" class="btn btn-default btn-xs code-folding-btn pull-right" data-toggle="collapse" data-target="#rcode-643E0F361" aria-expanded="false" aria-controls="rcode-643E0F361"><span>Code</span></button></div></div><div class="collapse r-code-collapse" id="rcode-643E0F361"><pre class="r"><code class="hljs"><span class="hljs-comment">#devtools::install_github("thomasp85/patchwork")</span>
+<span class="hljs-keyword">library</span>(tidyverse)
+<span class="hljs-keyword">library</span>(keras)
+<span class="hljs-keyword">library</span>(caret)
+<span class="hljs-keyword">library</span>(patchwork)
+<span class="hljs-keyword">library</span>(knitr)
+<span class="hljs-keyword">library</span>(kableExtra)
+<span class="hljs-keyword">library</span>(ggmap)
+<span class="hljs-keyword">library</span>(tidymodels)
+<span class="hljs-keyword">library</span>(geosphere)
+<span class="hljs-keyword">library</span>(recipes)
+<span class="hljs-keyword">library</span>(ggcorrplot)
+<span class="hljs-keyword">library</span>(ggforce)
+<span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(ggthemes)</code></pre></div>
+<p>Given the variables in the dataset we have choosen to recode some of them and adding three more variables, which we think would help the prediction. First we recode the variable “yr_renovated” to a dummy, 1 if the house have been renovated and 0 if not. Second is the coding of “basement” based on the variable “sqft_basement”, which is a dummy variable, 1 if the house have a basement and 0 if not. Third we create a distance variable based on the latitude and longtitude in the dataset. This variable is a measurement of the distance between centrum of seattle and the house’s locations. Finally we divide the observations into 100 clusters, which is based on the latitude and longtitude. So the data now consist of 21613 observations of 24 variables.</p>
+<p>The final dataset for the models can be seen in the table below.</p>
+</div>
